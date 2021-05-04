@@ -28,6 +28,13 @@ let onbasementscene5=false;
 let onupstairsscene=false;
 let onroomscene=false;
 let oncoffinscene1=false;
+let onclosetwindowscene=false;
+let ongravestonescene=false;
+let onclosetscene1=false;
+let ondangerclosetscene=false;
+let onstuckinclosetscene=false;
+let onshakingdoorscene=false;
+let onstuckinclosetscene2=false;
 
 function preload(){
     //IMAGES
@@ -61,8 +68,9 @@ function draw(){
 
 function mousePressed(){
     if (onhomescreen==true && onhomescreencounter==0){
+        spooky.stop();
         spooky.setVolume(0.25);
-        spooky.play(); 
+        spooky.loop(); 
     }
 }
 
@@ -93,10 +101,33 @@ function keyPressed(){
     } else if (key === '1' && onroomscene== true){ //SAY BOO
         onupstairsscene=false;
         boo();
-    } else if (key === '1' && oncoffinscene1== true){ //SAY BOO
+    } else if (key === '1' && oncoffinscene1== true){ //VAMPIRE - DO NOTHING
         oncoffinscene1=false;
         coffinscene2();
-    }
+    } else if (key === '1' && ongravestonescene== true){ //GRAVESTONE-RUN AWAY
+        ongravestonescene=false;
+        runaway();
+    } else if (key === '1' && onclosetwindowscene== true){ //USE WINDOW
+        onclosetwindowscene=false;
+        gravestonescene();
+    } else if (key === '1' && onclosetscene1== true){ //MOVE IN THE CLOSET
+        onclosetscene1=false;
+        dangercloset();
+    } else if (key === '1' && ondangerclosetscene== true){ //FIGHT BACK
+        ondangerclosetscene=false;
+        fightback();
+    } else if (key === '1' && onstuckinclosetscene== true){ //TRY TO SHAKE THE DOOR
+        onstuckinclosetscene=false;
+        shakingdoor();
+    } else if (key === '1' && onshakingdoorscene== true){ //DOOR IS STUCK
+        onshakingdoorscene=false;
+        stuckincloset();
+
+        textFont(montserrat);
+        textSize(20);
+        fill(0);
+        text("THE DOOR WON'T BUDGE.",450,150);
+    } 
 
 
     
@@ -119,9 +150,26 @@ function keyPressed(){
     } else if (key === '2' && onupstairsscene== true){ //APPROACH THE COFFIN
         onupstairsscene=false;
         coffinscene1();
-    } else if (key === '2' && oncoffinscene1== true){ //SAY BOO
+    } else if (key === '2' && oncoffinscene1== true){ //VAMPIRE - OPEN COFFIN
         oncoffinscene1=false;
         coffinscene3();
+    } else if (key === '2' && onlobbyscene== true){ //RUN AWAY FROM SOUND
+        onlobbyscene=false;
+        closetwindowscene();
+    } else if (key === '2' && ongravestonescene== true){ //GRAVESTONE - HIT HAND
+        ongravestonescene=false;
+        whack();
+    } else if (key === '2' && onclosetwindowscene== true){ //HIDE IN CLOSET
+        onclosetwindowscene=false;
+        inthecloset();
+    } else if (key === '2' && ondangerclosetscene== true){ //DONT MOVE IN CLOSET AGAIN
+        ondangerclosetscene=false;
+        dontmove();
+    } else if (key === '2' && onclosetscene1== true){ //DONT MOVE AT ALL IN CLOSET 
+        onclosetscene1=false;
+        stuckincloset();
+    } else if (key === '2' && onstuckinclosetscene== true){ //USE PHONE TO CALL FOR HELP
+        onstuckinclosetscene=false;
+        firefighter();
     }
-
-}
+   } 

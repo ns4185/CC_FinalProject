@@ -14,13 +14,11 @@ function homescreen(){
     text('A SHORT INTERACTIVE NARRATIVE',80,450);
 
     textSize(8);
-    text('[CLICK TO ENABLE SOUND]'); //for some reason the audio wouldn't play when I put the play command into setup, so I made it so that the user manually starts the music
+    text('[CLICK TO ENABLE SOUND]',115,470); //for some reason the audio wouldn't play when I put the play command into setup, so I made it so that the user manually starts the music
 
     textFont(montserrat);
     textSize(20);
     text('PRESS 1 TO START',1000,350);
-
-
 }
 
 function lobbyscene(){ //entered the house
@@ -30,6 +28,10 @@ function lobbyscene(){ //entered the house
     textFont(montserrat);
     textSize(20);
     text('FOLLOW THE SOUND [1]',80,350);
+
+    textFont(montserrat);
+    textSize(20);
+    text('RUN AWAY FROM THE SOUND [2]',850,400);
 }
 
 function stairwell(){ //decide to follow the noise
@@ -199,4 +201,144 @@ function coffinscene3(){//decide to open the coffin - ENDING 7 (TOMATO JUICE)
     fill(0);
     text('[ENDING - TOMATO JUICE + VAMPIRE]',400,350);
 
+}
+
+function closetwindowscene(){//decide to run away from noise
+    image(closetWindow,0,0);
+    onclosetwindowscene = true;
+
+    textFont(montserrat);
+    textSize(20);
+    text('ESCAPE USING THE WINDOW[1]',300,350);
+
+    textFont(montserrat);
+    textSize(20);
+    text('HIDE IN THE CLOSET [2]',1000,350);
+
+}
+
+function gravestonescene(){//decide to use the window
+    image(gravestone,0,0);
+    ongravestonescene = true;
+
+    textFont(montserrat);
+    textSize(20);
+    text('RUN AWAY[1]',300,350);
+
+    textFont(montserrat);
+    textSize(20);
+    text('SMACK THE HAND[2]',850,350);
+
+}
+
+function runaway(){ //decide to run away again - ENDING 8 (RUNAWAY)
+    background(255);//PLACEHOLDER
+    textFont(montserrat);
+    textSize(40);
+    fill(0);
+    text('[ENDING - RUNAWAY]',400,350);
+
+}
+
+function whack(){ //decide to smack the hand - ENDING 9 (WHACK-A-HAND)
+    background(255);//PLACEHOLDER
+    textFont(montserrat);
+    textSize(40);
+    fill(0);
+    text('[ENDING - WHACK-A-HAND]',400,350);
+
+}
+
+function inthecloset(){//decide to hide in the closet
+    background(50); //PLACEHOLDER
+    onclosetscene1=true;
+    textFont(montserrat);
+    textSize(40);
+    fill(0);
+    text('[INSERT HIDING IN CLOSET]',300,350);
+
+    textFont(montserrat);
+    textSize(20);
+    text('MOVE [1]',80,350);
+
+    textFont(montserrat);
+    textSize(20);
+    text('DONT MOVE [2]',1000,350);
+
+}
+
+function dangercloset(){ //moved in the closet
+    background(50); //PLACEHOLDER
+    ondangerclosetscene=true;
+    textFont(montserrat);
+    textSize(40);
+    fill(0);
+    text('[INSERT FIGURE MOVING CLOSER]',250,350);
+
+    textFont(montserrat);
+    textSize(20);
+    text('FIGHT[1]',80,350);
+
+    textFont(montserrat);
+    textSize(20);
+    text('DO NOTHING[2]',1000,350);
+}
+
+function fightback(){//decide to fight - ENDING 10 (BLOODY NOSE)
+    background(255);//PLACEHOLDER
+    textFont(montserrat);
+    textSize(40);
+    fill(0);
+    text('[ENDING - BLOODY NOSE]',400,350);
+}
+
+function dontmove(){//decide to do nothing again - ENDING 11 (NOT A GHOST)
+    background(255);//PLACEHOLDER
+    textFont(montserrat);
+    textSize(40);
+    fill(0);
+    text('[ENDING - NOT A GHOST]',400,350);
+}
+
+
+function stuckincloset(){//didn't move in the closet
+    background(50); //PLACEHOLDER
+    onstuckinclosetscene=true;
+    textFont(montserrat);
+    textSize(40);
+    fill(0);
+    text('[STUCK IN CLOSET]',400,350);
+
+    textFont(montserrat);
+    textSize(20);
+    text('TRY TO SHAKE THE DOOR [1]',80,350);
+
+    textFont(montserrat);
+    textSize(20);
+    text('USE YOUR PHONE TO CALL FOR HELP[2]',850,350);
+
+}
+
+function shakingdoor(){//decided to shake the door
+    background(50); //PLACEHOLDER
+    onshakingdoorscene=true;
+    textFont(montserrat);
+    textSize(40);
+    fill(0);
+    text('[STUCK IN CLOSET STILL]',600,350);
+
+    textFont(montserrat);
+    textSize(20);
+    text('TRY TO SHAKE THE DOOR AGAIN[1]',80,350);
+
+
+}
+
+
+function firefighter(){//call for help - ENDING 12 (FIREFIGHTER)
+    background(255);//PLACEHOLDER
+    textFont(montserrat);
+    textSize(40);
+    fill(0);
+    text('[ENDING - FIREFIGHTER]',400,350);
 }

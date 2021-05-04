@@ -99,7 +99,7 @@ function keyPressed(){
         onupstairsscene=false;
         roomscene();
     } else if (key === '1' && onroomscene== true){ //SAY BOO
-        onupstairsscene=false;
+        onroomscene=false;
         boo();
     } else if (key === '1' && oncoffinscene1== true){ //VAMPIRE - DO NOTHING
         oncoffinscene1=false;
@@ -145,7 +145,7 @@ function keyPressed(){
         onstairscene=false;
         upstairsscene();
     } else if (key === '2' && onroomscene== true){ //THROW SOMETHING
-        onupstairsscene=false;
+        onroomscene=false;
         thrown();
     } else if (key === '2' && onupstairsscene== true){ //APPROACH THE COFFIN
         onupstairsscene=false;

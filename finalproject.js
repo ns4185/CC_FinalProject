@@ -17,8 +17,7 @@ let coffinclose;
 let closetdoor;
 let closetback;
 let tomato;
-let dogtable;
-let lick;
+let spotted;
 
 //SPRITES
 let ghostbuster;
@@ -30,6 +29,12 @@ let cry;
 let ghost;
 let sleeping;
 let bleed;
+let dogtable;
+let lick;
+let question;
+let zombie;
+let run;
+let hammer;
 
 //FONTS
 let horror;
@@ -54,6 +59,7 @@ function preload(){
     closetdoor = loadImage('images/closetdoor.png');
     closetback = loadImage('images/closetback.png');
     tomato = loadImage('images/tomato.png');
+    spotted = loadImage('images/spotted.png');
 
     //SPRITES
     spider = loadAnimation('sprites/spider1.png','sprites/spider2.png','sprites/spider3.png','sprites/spider4.png','sprites/spider5.png');
@@ -67,6 +73,10 @@ function preload(){
     dogtable = loadAnimation('sprites/dogtable1.png','sprites/dogtable2.png','sprites/dogtable3.png','sprites/dogtable4.png');
     lick = loadAnimation('sprites/lick1.png','sprites/lick2.png','sprites/lick3.png','sprites/lick4.png','sprites/lick5.png');
     bleed = loadAnimation('sprites/bleed1.png', 'sprites/bleed2.png','sprites/bleed3.png')
+    question = loadAnimation('sprites/question1.png','sprites/question2.png');
+    zombie = loadAnimation('sprites/zombie1.png','sprites/zombie2.png');
+    run = loadAnimation('sprites/run1.png','sprites/run2.png');
+    hammer = loadAnimation('sprites/hammer1.png','sprites/hammer2.png');
 
     //FONTS
     montserrat = loadFont('Fonts/Montserrat.ttf');

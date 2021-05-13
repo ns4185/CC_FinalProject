@@ -259,11 +259,13 @@ function closetwindowscene(){//decide to run away from noise
 
 function gravestonescene(){//decide to use the window
     image(gravestone,0,0);
+    animation(zombie,640,360);
     // ongravestonescene = true;
     fill(255);
 
     textFont(montserrat);
     textSize(20);
+    text('YIKES, A ZOMBIE!',560,50);
     text('RUN AWAY[1]',300,350);
 
     textFont(montserrat);
@@ -273,11 +275,11 @@ function gravestonescene(){//decide to use the window
 }
 
 function runaway(){ //decide to run away again - ENDING 8 (RUNAWAY)
-    background(255);//PLACEHOLDER
+    animation(run,640,360);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - RUNAWAY]',400,350);
+    textSize(20);
+    fill(255);
+    text('IF YOU WERE JUST GOING TO RUN AWAY THE ENTIRE TIME, WHY DID YOU ENTER IN THE FIRST PLACE?',100,350);
 
     textSize(15);
     text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
@@ -285,11 +287,12 @@ function runaway(){ //decide to run away again - ENDING 8 (RUNAWAY)
 }
 
 function whack(){ //decide to smack the hand - ENDING 9 (WHACK-A-HAND)
-    background(255);//PLACEHOLDER
+    image(gravestone,0,0);
+    animation(hammer,640,360);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - WHACK-A-HAND]',400,350);
+    textSize(20);
+    fill(255);
+    text('WHAT AN INTERESTING GAME OF WHACK-A-MOLE!',390,130);
 
     textSize(15);
     text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
@@ -314,14 +317,13 @@ function inthecloset(){//decide to hide in the closet
 }
 
 function dangercloset(){ //moved in the closet
-    image(closetback,0,0);
-    image(closetdoor,0,0);
+    image(spotted,0,0);
     // ondangerclosetscene=true;
 
     textFont(montserrat);
-    textSize(40);
+    textSize(20);
     fill(255);
-    text('[INSERT FIGURE MOVING CLOSER]',250,350);
+    text("YOU'VE BEEN SPOTTED!",530,50);
 
     textFont(montserrat);
     textSize(20);
@@ -346,11 +348,13 @@ function fightback(){//decide to fight - ENDING 10 (BLOODY NOSE)
 }
 
 function dontmove(){//decide to do nothing again - ENDING 11 (NOT A GHOST)
-    background(255);//PLACEHOLDER
+    animation(question,640,360);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - NOT A GHOST]',400,350);
+    textSize(20);
+    fill(255);
+    text('A GHOSTBUSTER HAS PULLED YOU OUT OF THE CLOSET, CONFUSED',310,350);
+    textSize(15);
+    text("'HEY WAIT, YOU'RE NOT A GHOST...?'",520,380);
 
     textSize(15);
     text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);

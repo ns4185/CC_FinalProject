@@ -366,9 +366,9 @@ function stuckincloset(){//didn't move in the closet
     image(closetdoor,0,0);
     // onstuckinclosetscene=true;
     textFont(montserrat);
-    textSize(40);
+    textSize(20);
     fill(255);
-    text('[STUCK IN CLOSET]',400,350);
+    text("YOU'RE SAFE, BUT THE CLOSET DOORS SEEM TO BE STUCK.",350,50);
 
     textFont(montserrat);
     textSize(20);
@@ -387,7 +387,7 @@ function shakingdoor(){//decided to shake the door
     textFont(montserrat);
     textSize(40);
     fill(255);
-    text('[STUCK IN CLOSET STILL]',600,350);
+    text("THE DOOR WON'T BUDGE.",600,350);
 
     textFont(montserrat);
     textSize(20);

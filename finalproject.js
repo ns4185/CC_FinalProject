@@ -42,6 +42,19 @@ let assassin;
 
 //SOUNDS
 let spooky;
+let basementsteps;
+let leftsteps;
+let spiderscare;
+let dance;
+let licksound;
+let ghostsound;
+let boosound;
+let door;
+let snoring;
+let growl;
+let panting;
+let ow;
+let faststeps;
 
 
 function preload(){
@@ -85,6 +98,20 @@ function preload(){
     //SOUNDS
     soundFormats('mp3');
     spooky = loadSound('Sounds/spooky.mp3');
+    leftsteps = loadSound('Sounds/leftfootsteps.mp3');
+    basementsteps = loadSound('Sounds/basementsteps.mp3');
+    spiderscare = loadSound('Sounds/spiderscare.mp3');
+    dance = loadSound('Sounds/dance.mp3');
+    licksound = loadSound('Sounds/lick.mp3');
+    ghostsound = loadSound('Sounds/ghost.mp3');
+    boosound = loadSound('Sounds/boo.mp3');
+    door = loadSound('Sounds/door.mp3');
+    snoring = loadSound('Sounds/snoring.mp3');
+    scream = loadSound('Sounds/scream.mp3');
+    growl = loadSound('Sounds/growl.mp3');
+    panting = loadSound('Sounds/panting.mp3');
+    ow = loadSound('Sounds/ow.mp3');
+    faststeps = loadSound('Sounds/faststeps.mp3');
 }
 
 function setup(){
@@ -254,11 +281,16 @@ function keyPressed(){
         spooky.stop();
         screennumber=1;
         print(screennumber,"1");
+        leftsteps.setVolume(0.25);
+        leftsteps.loop();
 
     }
     else if (key === '1' && screennumber==1){ //FOLLOW THE NOISE
         screennumber=2;
         print(screennumber,"2");
+        leftsteps.stop();
+        basementsteps.setVolume(0.25);
+        basementsteps.play();
 
     }
     else if (key === '1' && screennumber==2){ //GO DOWN TO THE BASEMENT
@@ -269,31 +301,43 @@ function keyPressed(){
     else if (key === '1' && screennumber==3){ //TURN THE LIGHTS ON
         screennumber=4;
         print(screennumber,"4");
+        spiderscare.setVolume(0.25);
+        spiderscare.play();
 
     }
     else if (key === '1' && screennumber==4){ //SPIDERS-DO NOTHING
         screennumber=5;
         print(screennumber, "5");
+        dance.setVolume(0.25);
+        dance.loop();
 
     }
-    else if (key === '1' && screennumber==17){ //DOG-RUN AWAY
+    else if (key === '1' && screennumber==17){ //DOG-DO NOTHING
         screennumber=6;
         print(screennumber), "6";
+        licksound.setVolume(0.25);
+        licksound.loop();
 
     }
    else if (key === '1' && screennumber==19){ //ENTER THE ROOM
         screennumber=7;
         print(screennumber, "7");
+        ghostsound.setVolume(0.25);
+        ghostsound.play();
 
     }
    else  if (key === '1' && screennumber==7){ //SAY BOO
         screennumber=8;
         print(screennumber, "8");
+        boosound.setVolume(0.25);
+        boosound.play();
 
     }
    else  if (key === '1' && screennumber==21){ //VAMPIRE - DO NOTHING
         screennumber=9;
         print(screennumber, "9");
+        door.setVolume(0.25);
+        door.play();
 
     }
    else if (key === '1' && screennumber==11){ //GRAVESTONE-RUN AWAY
@@ -304,16 +348,22 @@ function keyPressed(){
    else if (key === '1' && screennumber==23){ //USE WINDOW
         screennumber=11;
         print(screennumber, "11");
+        faststeps.stop();
+
 
     }
    else if (key === '1' && screennumber==25){ //MOVE IN THE CLOSET
         screennumber=12;
         print(screennumber, "12");
+        spiderscare.setVolume(0.25);
+        spiderscare.play();
 
     }
    else  if (key === '1' && screennumber==12){ //FIGHT BACK
         screennumber=13;
         print(screennumber, "13");
+        ow.setVolume(0.25);
+        ow.play();
 
     }
    else  if (key === '1' && screennumber==27){ //TRY TO SHAKE THE DOOR
@@ -338,16 +388,22 @@ function keyPressed(){
    else if (key === '2' && screennumber==4){ //SPIDERS-SCREAM
         screennumber=16;
         print(screennumber, "16");
+        scream.setVolume(0.25);
+        scream.play();
 
     } 
    else if (key === '2' && screennumber==3){ //KEEP THE LIGHTS OFF
         screennumber=17;
         print(screennumber, "17");
+        growl.setVolume(0.25);
+        growl.play();
 
     }
    else if (key === '2' && screennumber==17){ //DOG-POKE
         screennumber=18;
         print(screennumber), "18";
+        panting.setVolume(0.25);
+        panting.loop();
 
     }
     else if (key === '2' && screennumber==2){ //GO UPSTAIRS
@@ -358,6 +414,8 @@ function keyPressed(){
    else if (key === '2' && screennumber==7){ //THROW SOMETHING
         screennumber=20;
         print(screennumber,"20");
+        ow.setVolume(0.25);
+        ow.play();
 
     }
    else if (key === '2' && screennumber==19){ //APPROACH THE COFFIN
@@ -368,11 +426,17 @@ function keyPressed(){
    else if (key === '2' && screennumber==21){ //VAMPIRE - OPEN COFFIN
         screennumber=22;
         print(screennumber,"22");
+        snoring.setVolume(0.25);
+        snoring.loop();
 
     }
      else if (key === '2' && screennumber==1){ //RUN AWAY FROM SOUND
         screennumber=23;
         print(screennumber,"23");
+        leftsteps.stop();
+        faststeps.setVolume();
+        faststeps.loop();
+
 
     }
     else if (key === '2' && screennumber==11){ //GRAVESTONE - HIT HAND
@@ -383,6 +447,8 @@ function keyPressed(){
     else if (key === '2' && screennumber==23){ //HIDE IN CLOSET
         screennumber=25;
         print(screennumber,"25");
+        faststeps.stop();
+
 
     }
     else if (key === '2' && screennumber==12){ //DONT MOVE IN CLOSET AGAIN

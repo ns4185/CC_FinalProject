@@ -18,6 +18,7 @@ let closetdoor;
 let closetback;
 let tomato;
 let spotted;
+let phone;
 
 //SPRITES
 let ghostbuster;
@@ -73,6 +74,7 @@ function preload(){
     closetback = loadImage('images/closetback.png');
     tomato = loadImage('images/tomato.png');
     spotted = loadImage('images/spotted.png');
+    phone = loadImage('images/phone.png');
 
     //SPRITES
     spider = loadAnimation('sprites/spider1.png','sprites/spider2.png','sprites/spider3.png','sprites/spider4.png','sprites/spider5.png');
@@ -194,7 +196,7 @@ function draw(){
         textFont(montserrat);
         textSize(20);
         fill(255);
-        text("THE DOOR WON'T BUDGE.",450,150);
+        text("THE DOOR WON'T BUDGE.",520,150);
         print('15');
 
     } else if (screennumber==16){

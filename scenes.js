@@ -397,12 +397,12 @@ function shakingdoor(){//decided to shake the door
 }
 
 
-function firefighter(){//call for help - ENDING 12 (FIREFIGHTER)
-    background(255);//PLACEHOLDER
+function firefighter(){//call for help - ENDING 12 (PHONE)
+    image(phone,0,0);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - FIREFIGHTER]',400,350);
+    textSize(20);
+    fill(255);
+    text("MAYBE IT WASN'T SUCH A GOOD IDEA TO COME HERE ALONE...",300,350);
 
     textSize(15);
     text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);

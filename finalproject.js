@@ -16,6 +16,9 @@ let redeyes;
 let coffinclose;
 let closetdoor;
 let closetback;
+let tomato;
+let dogtable;
+let lick;
 
 //SPRITES
 let ghostbuster;
@@ -25,6 +28,8 @@ let disco;
 let deadghost;
 let cry;
 let ghost;
+let sleeping;
+let bleed;
 
 //FONTS
 let horror;
@@ -47,7 +52,8 @@ function preload(){
     redeyes = loadImage('images/redeyes.png');
     coffinclose= loadImage('images/coffinclose.png');
     closetdoor = loadImage('images/closetdoor.png');
-    closetback = loadImage('images/closetback.png')
+    closetback = loadImage('images/closetback.png');
+    tomato = loadImage('images/tomato.png');
 
     //SPRITES
     spider = loadAnimation('sprites/spider1.png','sprites/spider2.png','sprites/spider3.png','sprites/spider4.png','sprites/spider5.png');
@@ -57,6 +63,10 @@ function preload(){
     deadghost = loadAnimation('sprites/boo1.png','sprites/boo2.png','sprites/boo3.png');
     cry = loadAnimation('sprites/cry1.png', 'sprites/cry2.png', 'sprites/cry3.png');
     ghost = loadAnimation('sprites/ghost1.png','sprites/ghost2.png','sprites/ghost3.png');
+    sleeping = loadAnimation('sprites/sleeping1.png', 'sprites/sleeping2.png', 'sprites/sleeping3.png');
+    dogtable = loadAnimation('sprites/dogtable1.png','sprites/dogtable2.png','sprites/dogtable3.png','sprites/dogtable4.png');
+    lick = loadAnimation('sprites/lick1.png','sprites/lick2.png','sprites/lick3.png','sprites/lick4.png','sprites/lick5.png');
+    bleed = loadAnimation('sprites/bleed1.png', 'sprites/bleed2.png','sprites/bleed3.png')
 
     //FONTS
     montserrat = loadFont('Fonts/Montserrat.ttf');
@@ -163,7 +173,7 @@ function draw(){
         fill(255);
         textFont(montserrat);
         textSize(20);
-        text('RUN AWAY [1]',80,350);
+        text('DO NOTHING[1]',80,350);
     
         textFont(montserrat);
         textSize(20);

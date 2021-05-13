@@ -118,19 +118,19 @@ function basementscene4(){ //decide to scream - ENDING 2 (EXTERMINATOR)
 }
 
 function basementscene5(){//decide to leave the lights off
-    tint(255,10);
+    tint(255,30);
     image(redeyes,0,0);
     // onbasementscene5=true;
     fill(255);
 
 }
 
-function basementscene6(){//decide to run away - ENDING 3 (DOG JUMPS ON YOU)
-    background(255);//PLACEHOLDER
+function basementscene6(){//decide to do nothing - ENDING 3 (DOG LICKS YOU)
+    animation(lick,640,360);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - DOG JUMPS ON YOU]',400,350);
+    textSize(20);
+    fill(255);
+    text('SOMETHING IS...LICKING YOU??',500,350);
 
     textSize(15);
     text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
@@ -138,11 +138,11 @@ function basementscene6(){//decide to run away - ENDING 3 (DOG JUMPS ON YOU)
 }
 
 function basementscene7(){ //decide to poke - ENDING 4 (PET THE DOG)
-    background(255);//PLACEHOLDER
+    animation(dogtable,640,360);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - PETTING THE DOG]',400,350);
+    textSize(20);
+    fill(255);
+    text("IT'S A CUTE DOG!",530,100);
 
     textSize(15);
     text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
@@ -218,23 +218,24 @@ function coffinscene1(){//decide to approach the coffin
 
 }
 
-function coffinscene2(){//decide to do nothing - ENDING 7 (SUNLIGHT)
-    background(255);//PLACEHOLDER
+function coffinscene2(){//decide to do nothing - ENDING 7 (TOMATO)
+    image(tomato,0,0);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - SUNLIGHT + VAMPIRE]',400,350);
+    textSize(20);
+    fill(255);
+    text("WHATEVER'S INSIDE THE COFFIN SEEMS TO HAVE HEARD YOU...",100,350);
+    text("....AND IT'S ASKING FOR TOMATO JUICE!?",200,380);
 
     textSize(15);
     text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
 }
 
-function coffinscene3(){//decide to open the coffin - ENDING 7 (TOMATO JUICE)
-    background(255);//PLACEHOLDER
+function coffinscene3(){//decide to open the coffin - ENDING 7 (SLEEP)
+    animation(sleeping,640,360);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - TOMATO JUICE + VAMPIRE]',400,350);
+    textSize(20);
+    fill(255);
+    text("THE VAMPIRE IS SLEPING... AND MAYBE IT'S A GOOD THING IT'S NOT AWAKE.",250,350);
 
     textSize(15);
     text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
@@ -332,11 +333,13 @@ function dangercloset(){ //moved in the closet
 }
 
 function fightback(){//decide to fight - ENDING 10 (BLOODY NOSE)
-    background(255);//PLACEHOLDER
+    animation (bleed,640,360);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - BLOODY NOSE]',400,350);
+    textSize(20);
+    fill(255);
+    text('YOU DEFENDED YOURSELF...FROM A GHOSTBUSTER.',380,350);
+    textSize(15);
+    text('[NOW HE HAS A BLOODY NOSE. OOPS!]',490,380);
 
     textSize(15);
     text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);

@@ -1,6 +1,8 @@
 let screennumber=0; //this variable lets the computer know which screen it's on so that it draws the appropriate scene in the draw loop - in an earlier ->
 //version I was having trouble with animations since I kept the functions outside of the draw loop, so this variable solves that problemm.
 
+let s=0; //spiders running away
+
 //IMAGES
 let home;
 let lobby;
@@ -16,8 +18,13 @@ let closetdoor;
 let closetback;
 
 //SPRITES
-// let ghostbustersprite;
-// let ghostbusterblink;
+let ghostbuster;
+let spider;
+let exterminator;
+let disco;
+let deadghost;
+let cry;
+let ghost;
 
 //FONTS
 let horror;
@@ -43,8 +50,13 @@ function preload(){
     closetback = loadImage('images/closetback.png')
 
     //SPRITES
-    ghostbustersprite = loadSpriteSheet('sprites/ghostbuster.png', 1280,720,8);
-    ghostbusterblink = loadAnimation(ghostbustersprite);
+    spider = loadAnimation('sprites/spider1.png','sprites/spider2.png','sprites/spider3.png','sprites/spider4.png','sprites/spider5.png');
+    exterminator = loadAnimation('sprites/exterminator1.png', 'sprites/exterminator2.png', 'sprites/exterminator3.png', 'sprites/exterminator4.png');
+    ghostbuster = loadAnimation('sprites/ghostbuster1.png','sprites/ghostbuster2.png','sprites/ghostbuster3.png','sprites/ghostbuster4.png','sprites/ghostbuster5.png','sprites/ghostbuster6.png','sprites/ghostbuster7.png','sprites/ghostbuster8.png');
+    disco = loadAnimation('sprites/disco1.png', 'sprites/disco2.png', 'sprites/disco3.png');
+    deadghost = loadAnimation('sprites/boo1.png','sprites/boo2.png','sprites/boo3.png');
+    cry = loadAnimation('sprites/cry1.png', 'sprites/cry2.png', 'sprites/cry3.png');
+    ghost = loadAnimation('sprites/ghost1.png','sprites/ghost2.png','sprites/ghost3.png');
 
     //FONTS
     montserrat = loadFont('Fonts/Montserrat.ttf');
@@ -58,12 +70,12 @@ function preload(){
 function setup(){
     createCanvas(1280,720);
     background(0);
+    frameRate(25);
 }
 
 function draw(){
     if (screennumber==0){
         homescreen();
-        // animation(ghostbusterblink,640,360);
 
 
     } else if (screennumber==1){
@@ -77,6 +89,14 @@ function draw(){
     } else if (screennumber==3){
         basementscene1();
         print('3');
+        fill(255);
+        textFont(montserrat);
+        textSize(20);
+        text('TURN ON THE LIGHTS [1]',80,350);
+    
+        textFont(montserrat);
+        textSize(20);
+        text('KEEP THE LIGHTS OFF [2]',850,350);
 
     } else if (screennumber==4){
         basementscene2();
@@ -132,11 +152,22 @@ function draw(){
 
     } else if (screennumber==16){
         basementscene4();
+        s=s+10;
         print('16');
 
     } else if (screennumber==17){
+      
         basementscene5();
         print('17');
+
+        fill(255);
+        textFont(montserrat);
+        textSize(20);
+        text('RUN AWAY [1]',80,350);
+    
+        textFont(montserrat);
+        textSize(20);
+        text('POKE IT! [2]',1100,350);
 
     } else if (screennumber==18){
         basementscene7();

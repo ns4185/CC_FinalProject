@@ -1,4 +1,5 @@
 function homescreen(){
+
     image(home, 0, 0);
     fill(255);
     textFont(horror);
@@ -17,6 +18,8 @@ function homescreen(){
     textFont(montserrat);
     textSize(20);
     text('PRESS 1 TO START',1000,350);
+
+
 }
 
 function lobbyscene(){ //entered the house
@@ -50,25 +53,26 @@ function stairwell(){ //decide to follow the noise
 function basementscene1(){ //lights are off
     background(0);
     // onbasementscene1 = true;
-
-    fill(255);
-    textFont(montserrat);
-    textSize(20);
-    text('TURN ON THE LIGHTS [1]',80,350);
-
-    textFont(montserrat);
-    textSize(20);
-    text('KEEP THE LIGHTS OFF [2]',850,350);
 }
 
 function basementscene2(){ //decide to turn on the lights
     image(basement,0,0);
     // onbasementscene2=true;
     fill(255);
+    animation(spider,200,550);
+    animation(spider,300,500);
+    animation(spider,400,550);
+    animation(spider,550,500);
+    animation(spider,650,510);
+    animation(spider,800,600);
+    animation(spider,1000,680);
+
+        
 
     textFont(montserrat);
     textSize(20);
     text('DO NOTHING [1]',80,350);
+    text('YIKES, SPIDERS!',580,100);
 
     textFont(montserrat);
     textSize(20);
@@ -76,33 +80,49 @@ function basementscene2(){ //decide to turn on the lights
 }
 
 function basementscene3(){ //decide to do nothing - ENDING 1 (SPIDER DANCE PARTY)
-    background(255); //PLACEHOLDER
+    image(basement,0,0);
+    animation(spider,200,550);
+    animation(spider,300,500);
+    animation(spider,400,550);
+    animation(spider,550,500);
+    animation(spider,650,510);
+    animation(spider,800,600);
+    animation(spider,1000,680);
+    animation(disco,640,360)
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - SPIDER RAVE]',400,350);
+    textSize(20);
+    fill(255);
+    text('THE SPIDERS ARE HAVING A...DANCE PARTY?',400,350);
+
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
 }
 
 function basementscene4(){ //decide to scream - ENDING 2 (EXTERMINATOR)
-    background(255); //PLACEHOLDER
+    image(basement,0,0);
+    animation(spider,s+200,550);
+    animation(spider,s+300,500);
+    animation(spider,s+400,550);
+    animation(spider,s+550,500);
+    animation(spider,s+650,510);
+    animation(spider,s+800,600);
+    animation(spider,s+1000,680);
+    animation(exterminator,640,360);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - EXTERMINATOR]',400,350);
+    fill(255);
+    textSize(20);
+    text("THAT'S AN EXTERMINATOR...IS THIS REALLY A HAUNTED HOUSE?",400,350);
+
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
 }
 
 function basementscene5(){//decide to leave the lights off
+    tint(255,10);
     image(redeyes,0,0);
     // onbasementscene5=true;
     fill(255);
 
-    textFont(montserrat);
-    textSize(20);
-    text('RUN AWAY [1]',80,350);
-
-    textFont(montserrat);
-    textSize(20);
-    text('POKE IT! [2]',1100,350);
 }
 
 function basementscene6(){//decide to run away - ENDING 3 (DOG JUMPS ON YOU)
@@ -112,6 +132,9 @@ function basementscene6(){//decide to run away - ENDING 3 (DOG JUMPS ON YOU)
     fill(0);
     text('[ENDING - DOG JUMPS ON YOU]',400,350);
 
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
+
 }
 
 function basementscene7(){ //decide to poke - ENDING 4 (PET THE DOG)
@@ -120,6 +143,9 @@ function basementscene7(){ //decide to poke - ENDING 4 (PET THE DOG)
     textSize(40);
     fill(0);
     text('[ENDING - PETTING THE DOG]',400,350);
+
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
 }
 
 function upstairsscene(){//decide to go upstairs
@@ -138,6 +164,7 @@ function upstairsscene(){//decide to go upstairs
 
 function roomscene(){//decide to enter the room
     image(bedroom,0,0);
+    animation(ghost,1000,500);
     // onroomscene=true;
     fill(255);
 
@@ -151,20 +178,28 @@ function roomscene(){//decide to enter the room
 }
 
 function boo(){//decide to say "boo" - ENDING 5 (SCARE THE GHOST)
-    background(255);//PLACEHOLDER
+    animation(deadghost,640,360);
     textFont(montserrat);
-    textSize(40);
+    textSize(20);
+    fill(255);
+    text('YOU SCARED A GHOST...TO DEATH?',450,350);
+
+    textSize(15);
     fill(0);
-    text('[ENDING - SCARE THE GHOST]',400,350);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
 
 }
 
 function thrown(){//decide to throw something - ENDING 6 (HIT THE GHOST)
-    background(255);//PLACEHOLDER
+    animation(cry,640,360);
     textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[ENDING - HIT THE GHOST]',400,350);
+    textSize(20);
+    fill(255);
+    text('YOU THREW SOMETHING AT THE GHOST...WHICH ENDED UP NOT',320,350);
+    text('BEING A GHOST?',570,380)
+
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",450,700);
 
 }
 
@@ -190,6 +225,8 @@ function coffinscene2(){//decide to do nothing - ENDING 7 (SUNLIGHT)
     fill(0);
     text('[ENDING - SUNLIGHT + VAMPIRE]',400,350);
 
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
 }
 
 function coffinscene3(){//decide to open the coffin - ENDING 7 (TOMATO JUICE)
@@ -198,6 +235,9 @@ function coffinscene3(){//decide to open the coffin - ENDING 7 (TOMATO JUICE)
     textSize(40);
     fill(0);
     text('[ENDING - TOMATO JUICE + VAMPIRE]',400,350);
+
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
 
 }
 
@@ -238,6 +278,9 @@ function runaway(){ //decide to run away again - ENDING 8 (RUNAWAY)
     fill(0);
     text('[ENDING - RUNAWAY]',400,350);
 
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
+
 }
 
 function whack(){ //decide to smack the hand - ENDING 9 (WHACK-A-HAND)
@@ -247,10 +290,14 @@ function whack(){ //decide to smack the hand - ENDING 9 (WHACK-A-HAND)
     fill(0);
     text('[ENDING - WHACK-A-HAND]',400,350);
 
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
+
 }
 
 function inthecloset(){//decide to hide in the closet
     image(closetback,0,0);
+    animation(ghostbuster,640,360);
     image(closetdoor,0,0);
     // onclosetscene1=true;
    
@@ -290,6 +337,9 @@ function fightback(){//decide to fight - ENDING 10 (BLOODY NOSE)
     textSize(40);
     fill(0);
     text('[ENDING - BLOODY NOSE]',400,350);
+
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
 }
 
 function dontmove(){//decide to do nothing again - ENDING 11 (NOT A GHOST)
@@ -298,6 +348,9 @@ function dontmove(){//decide to do nothing again - ENDING 11 (NOT A GHOST)
     textSize(40);
     fill(0);
     text('[ENDING - NOT A GHOST]',400,350);
+
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
 }
 
 
@@ -343,4 +396,8 @@ function firefighter(){//call for help - ENDING 12 (FIREFIGHTER)
     textSize(40);
     fill(0);
     text('[ENDING - FIREFIGHTER]',400,350);
+
+    textSize(15);
+    text("[YOU'VE REACHED AN ENDING. REFRESH TO RESTART.]",420,700);
 }
+

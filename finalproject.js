@@ -56,7 +56,13 @@ let growl;
 let panting;
 let ow;
 let faststeps;
-
+let huh;
+let receding;
+let shake;
+let dial;
+let screaming;
+let pow;
+let heart;
 
 function preload(){
     //IMAGES
@@ -114,6 +120,13 @@ function preload(){
     panting = loadSound('Sounds/panting.mp3');
     ow = loadSound('Sounds/ow.mp3');
     faststeps = loadSound('Sounds/faststeps.mp3');
+    huh = loadSound('Sounds/huh.mp3');
+    receding = loadSound('Sounds/receding.mp3');
+    shake = loadSound('Sounds/shake.mp3');
+    dial = loadSound('Sounds/dial.mp3');
+    screaming = loadSound('Sounds/screaming.mp3');
+    pow = loadSound('Sounds/pow.mp3');
+    heart = loadSound('Sounds/heart.mp3');
 }
 
 function setup(){
@@ -345,6 +358,8 @@ function keyPressed(){
    else if (key === '1' && screennumber==11){ //GRAVESTONE-RUN AWAY
         screennumber=10;
         print(screennumber, "10");
+        screaming.setVolume(0.25);
+        screaming.play();
 
     }
    else if (key === '1' && screennumber==23){ //USE WINDOW
@@ -357,6 +372,7 @@ function keyPressed(){
    else if (key === '1' && screennumber==25){ //MOVE IN THE CLOSET
         screennumber=12;
         print(screennumber, "12");
+        heart.stop();
         spiderscare.setVolume(0.25);
         spiderscare.play();
 
@@ -371,16 +387,22 @@ function keyPressed(){
    else  if (key === '1' && screennumber==27){ //TRY TO SHAKE THE DOOR
         screennumber=14;
         print(screennumber,"14");
+        shake.setVolume(0.25);
+        shake.play();
 
     }
    else if (key === '1' && screennumber==14){ //DOOR IS STUCK
         screennumber=15;
         print(screennumber, "15");
+        shake.setVolume(0.25);
+        shake.play();
 
     } 
     else if (key === '1' && screennumber==15){ //DOOR IS STUCK
         screennumber=14;
         print(screennumber, "14");
+        shake.setVolume(0.25);
+        shake.play();
 
     } 
 
@@ -436,7 +458,7 @@ function keyPressed(){
         screennumber=23;
         print(screennumber,"23");
         leftsteps.stop();
-        faststeps.setVolume();
+        faststeps.setVolume(0.25);
         faststeps.loop();
 
 
@@ -444,33 +466,46 @@ function keyPressed(){
     else if (key === '2' && screennumber==11){ //GRAVESTONE - HIT HAND
         screennumber=24;
         print(screennumber,"24");
+        pow.setVolume(0.25);
+        pow.loop();
 
     } 
     else if (key === '2' && screennumber==23){ //HIDE IN CLOSET
         screennumber=25;
         print(screennumber,"25");
         faststeps.stop();
+        heart.setVolume(0.25);
+        heart.loop();
 
 
     }
     else if (key === '2' && screennumber==12){ //DONT MOVE IN CLOSET AGAIN
         screennumber=26;
         print(screennumber,"26");
+        huh.setVolume(0.25);
+        huh.play();
 
     }
     else if (key === '2' && screennumber==25){ //DONT MOVE AT ALL IN CLOSET 
         screennumber=27;
         print(screennumber,"27");
+        heart.stop();
+        receding.setVolume(0.25);
+        receding.play();
 
     }
     else if (key === '2' && screennumber==27){ //USE PHONE TO CALL FOR HELP
         screennumber=28;
         print(screennumber,"28");
+        dial.setVolume(0.25);
+        dial.play();
 
     }
     else if (key === '2' && screennumber==15){ //DOOR IS STUCK
         screennumber=28;
         print(screennumber, "28");
+        dial.setVolume(0.25);
+        dial.play();
 
     } 
    } 

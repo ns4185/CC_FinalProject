@@ -249,6 +249,7 @@ function closetwindowscene(){//decide to run away from noise
 
     textFont(montserrat);
     textSize(20);
+    text("SOMETHING'S CHASING YOU!",500,50);
     text('ESCAPE USING THE WINDOW[1]',300,350);
 
     textFont(montserrat);

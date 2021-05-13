@@ -1,3 +1,6 @@
+let screennumber=0; //this variable lets the computer know which screen it's on so that it draws the appropriate scene in the draw loop - in an earlier ->
+//version I was having trouble with animations since I kept the functions outside of the draw loop, so this variable solves that problemm.
+
 //IMAGES
 let home;
 let lobby;
@@ -7,6 +10,14 @@ let upstairsHallway;
 let upOrDownstairs;
 let basement;
 let bedroom;
+let redeyes;
+let coffinclose;
+let closetdoor;
+let closetback;
+
+//SPRITES
+// let ghostbustersprite;
+// let ghostbusterblink;
 
 //FONTS
 let horror;
@@ -15,26 +26,6 @@ let assassin;
 //SOUNDS
 let spooky;
 
-
-//BOOLEANS
-let onhomescreen;
-let onhomescreencounter=0;
-let onlobbyscene=false;
-let onstairscene=false;
-let onbasementscene1=false;
-let onbasementscene2=false;
-let onbasementscene3=false;
-let onbasementscene5=false;
-let onupstairsscene=false;
-let onroomscene=false;
-let oncoffinscene1=false;
-let onclosetwindowscene=false;
-let ongravestonescene=false;
-let onclosetscene1=false;
-let ondangerclosetscene=false;
-let onstuckinclosetscene=false;
-let onshakingdoorscene=false;
-let onstuckinclosetscene2=false;
 
 function preload(){
     //IMAGES
@@ -46,6 +37,14 @@ function preload(){
     upOrDownstairs = loadImage('images/upordownstairs.png');
     basement = loadImage('images/basement.png');
     bedroom = loadImage('images/bedroom.png');
+    redeyes = loadImage('images/redeyes.png');
+    coffinclose= loadImage('images/coffinclose.png');
+    closetdoor = loadImage('images/closetdoor.png');
+    closetback = loadImage('images/closetback.png')
+
+    //SPRITES
+    ghostbustersprite = loadSpriteSheet('sprites/ghostbuster.png', 1280,720,8);
+    ghostbusterblink = loadAnimation(ghostbustersprite);
 
     //FONTS
     montserrat = loadFont('Fonts/Montserrat.ttf');
@@ -59,15 +58,140 @@ function preload(){
 function setup(){
     createCanvas(1280,720);
     background(0);
-    homescreen();
 }
 
 function draw(){
+    if (screennumber==0){
+        homescreen();
+        // animation(ghostbusterblink,640,360);
+
+
+    } else if (screennumber==1){
+        lobbyscene();
+        print('1');
+
+    } else if (screennumber==2){
+        stairwell();
+        print('2');
+
+    } else if (screennumber==3){
+        basementscene1();
+        print('3');
+
+    } else if (screennumber==4){
+        basementscene2();
+        print('4');
+
+    } else if (screennumber==5){
+        basementscene3();
+        print('5');
+
+    } else if (screennumber==6){
+        basementscene6();
+        print('6');
+
+    } else if (screennumber==7){
+        roomscene();
+        print('7');
+
+    } else if (screennumber==8){
+        boo();
+        print('8');
+
+    } else if (screennumber==9){
+        coffinscene2();
+        print('9');
+
+    } else if (screennumber==10){
+        runaway();
+        print('10');
+
+    } else if (screennumber==11){
+        gravestonescene();
+        print('11');
+
+    } else if (screennumber==12){
+        dangercloset();
+        print('12');
+
+    } else if (screennumber==13){
+        fightback();
+        print('13');
+
+    } else if (screennumber==14){
+        shakingdoor();
+        print('14');
+
+    } else if (screennumber==15){
+        stuckincloset();
+        textFont(montserrat);
+        textSize(20);
+        fill(255);
+        text("THE DOOR WON'T BUDGE.",450,150);
+        print('15');
+
+    } else if (screennumber==16){
+        basementscene4();
+        print('16');
+
+    } else if (screennumber==17){
+        basementscene5();
+        print('17');
+
+    } else if (screennumber==18){
+        basementscene7();
+        print('18');
+
+    } else if (screennumber==19){
+        upstairsscene();
+        print('19');
+
+    } else if (screennumber==20){
+        print('20');
+        thrown();
+       
+
+    } else if (screennumber==21){
+        print('21');
+        coffinscene1();
+       
+
+    } else if (screennumber==22){
+        print('22');
+        coffinscene3();
+        
+
+    } else if (screennumber==23){
+        print('23');
+        closetwindowscene();
+        
+
+    } else if (screennumber==24){
+        whack();
+        print('24');
+
+    } else if (screennumber==25){
+        inthecloset();
+        print('25');
+
+    } else if (screennumber==26){
+        dontmove();
+        print('26');
+
+    } else if (screennumber==27){
+        stuckincloset();
+        print('27');
+
+    } else if (screennumber==28){
+        firefighter();
+        print('28');
+
+    }
     
 }
 
 function mousePressed(){
-    if (onhomescreen==true && onhomescreencounter==0){
+    if (screennumber==0){
         spooky.stop();
         spooky.setVolume(0.25);
         spooky.loop(); 
@@ -75,101 +199,159 @@ function mousePressed(){
 }
 
 function keyPressed(){
-    if (key === '1' && onhomescreen == true){ 
-        onhomescreen=false;
-        onhomescreencounter=1;
+    if (key === '1' && screennumber==0){ 
         spooky.stop();
-        lobbyscene();
-    } else if (key === '1' && onlobbyscene == true){ //FOLLOW THE NOISE
-        onlobbyscene=false;
-        stairwell();
-    } else if (key === '1' && onstairscene == true){ //GO DOWN TO THE BASEMENT
-        onstairscene=false;
-        basementscene1();
-    } else if (key === '1' && onbasementscene1 == true){ //TURN THE LIGHTS ON
-        onbasementscene1=false;
-        basementscene2();
-    } else if (key === '1' && onbasementscene2 == true){ //SPIDERS-DO NOTHING
-        onbasementscene2=false;
-        basementscene3();
-    } else if (key === '1' && onbasementscene5 == true){ //DOG-RUN AWAY
-        onbasementscene5=false;
-        basementscene6();
-    } else if (key === '1' && onupstairsscene== true){ //ENTER THE ROOM
-        onupstairsscene=false;
-        roomscene();
-    } else if (key === '1' && onroomscene== true){ //SAY BOO
-        onroomscene=false;
-        boo();
-    } else if (key === '1' && oncoffinscene1== true){ //VAMPIRE - DO NOTHING
-        oncoffinscene1=false;
-        coffinscene2();
-    } else if (key === '1' && ongravestonescene== true){ //GRAVESTONE-RUN AWAY
-        ongravestonescene=false;
-        runaway();
-    } else if (key === '1' && onclosetwindowscene== true){ //USE WINDOW
-        onclosetwindowscene=false;
-        gravestonescene();
-    } else if (key === '1' && onclosetscene1== true){ //MOVE IN THE CLOSET
-        onclosetscene1=false;
-        dangercloset();
-    } else if (key === '1' && ondangerclosetscene== true){ //FIGHT BACK
-        ondangerclosetscene=false;
-        fightback();
-    } else if (key === '1' && onstuckinclosetscene== true){ //TRY TO SHAKE THE DOOR
-        onstuckinclosetscene=false;
-        shakingdoor();
-    } else if (key === '1' && onshakingdoorscene== true){ //DOOR IS STUCK
-        onshakingdoorscene=false;
-        stuckincloset();
+        screennumber=1;
+        print(screennumber,"1");
 
-        textFont(montserrat);
-        textSize(20);
-        fill(0);
-        text("THE DOOR WON'T BUDGE.",450,150);
+    }
+    else if (key === '1' && screennumber==1){ //FOLLOW THE NOISE
+        screennumber=2;
+        print(screennumber,"2");
+
+    }
+    else if (key === '1' && screennumber==2){ //GO DOWN TO THE BASEMENT
+        screennumber=3;
+        print(screennumber,"3");
+
+    }
+    else if (key === '1' && screennumber==3){ //TURN THE LIGHTS ON
+        screennumber=4;
+        print(screennumber,"4");
+
+    }
+    else if (key === '1' && screennumber==4){ //SPIDERS-DO NOTHING
+        screennumber=5;
+        print(screennumber, "5");
+
+    }
+    else if (key === '1' && screennumber==17){ //DOG-RUN AWAY
+        screennumber=6;
+        print(screennumber), "6";
+
+    }
+   else if (key === '1' && screennumber==19){ //ENTER THE ROOM
+        screennumber=7;
+        print(screennumber, "7");
+
+    }
+   else  if (key === '1' && screennumber==7){ //SAY BOO
+        screennumber=8;
+        print(screennumber, "8");
+
+    }
+   else  if (key === '1' && screennumber==21){ //VAMPIRE - DO NOTHING
+        screennumber=9;
+        print(screennumber, "9");
+
+    }
+   else if (key === '1' && screennumber==11){ //GRAVESTONE-RUN AWAY
+        screennumber=10;
+        print(screennumber, "10");
+
+    }
+   else if (key === '1' && screennumber==23){ //USE WINDOW
+        screennumber=11;
+        print(screennumber, "11");
+
+    }
+   else if (key === '1' && screennumber==25){ //MOVE IN THE CLOSET
+        screennumber=12;
+        print(screennumber, "12");
+
+    }
+   else  if (key === '1' && screennumber==12){ //FIGHT BACK
+        screennumber=13;
+        print(screennumber, "13");
+
+    }
+   else  if (key === '1' && screennumber==27){ //TRY TO SHAKE THE DOOR
+        screennumber=14;
+        print(screennumber,"14");
+
+    }
+   else if (key === '1' && screennumber==14){ //DOOR IS STUCK
+        screennumber=15;
+        print(screennumber, "15");
+
+    } 
+    else if (key === '1' && screennumber==15){ //DOOR IS STUCK
+        screennumber=14;
+        print(screennumber, "14");
+
     } 
 
 
     
 
-    if (key === '2' && onbasementscene2 ==true){ //SPIDERS-SCREAM
-        onbasementscene2=false;
-        basementscene4();
-    } else if (key === '2' && onbasementscene1 == true){ //KEEP THE LIGHTS OFF
-        onbasementscene1=false;
-        basementscene5();
-    } else if (key === '2' && onbasementscene5 == true){ //DOG-POKE
-        onbasementscene5=false;
-        basementscene7();
-    } else if (key === '2' && onstairscene == true){ //GO UPSTAIRS
-        onstairscene=false;
-        upstairsscene();
-    } else if (key === '2' && onroomscene== true){ //THROW SOMETHING
-        onroomscene=false;
-        thrown();
-    } else if (key === '2' && onupstairsscene== true){ //APPROACH THE COFFIN
-        onupstairsscene=false;
-        coffinscene1();
-    } else if (key === '2' && oncoffinscene1== true){ //VAMPIRE - OPEN COFFIN
-        oncoffinscene1=false;
-        coffinscene3();
-    } else if (key === '2' && onlobbyscene== true){ //RUN AWAY FROM SOUND
-        onlobbyscene=false;
-        closetwindowscene();
-    } else if (key === '2' && ongravestonescene== true){ //GRAVESTONE - HIT HAND
-        ongravestonescene=false;
-        whack();
-    } else if (key === '2' && onclosetwindowscene== true){ //HIDE IN CLOSET
-        onclosetwindowscene=false;
-        inthecloset();
-    } else if (key === '2' && ondangerclosetscene== true){ //DONT MOVE IN CLOSET AGAIN
-        ondangerclosetscene=false;
-        dontmove();
-    } else if (key === '2' && onclosetscene1== true){ //DONT MOVE AT ALL IN CLOSET 
-        onclosetscene1=false;
-        stuckincloset();
-    } else if (key === '2' && onstuckinclosetscene== true){ //USE PHONE TO CALL FOR HELP
-        onstuckinclosetscene=false;
-        firefighter();
+   else if (key === '2' && screennumber==4){ //SPIDERS-SCREAM
+        screennumber=16;
+        print(screennumber, "16");
+
+    } 
+   else if (key === '2' && screennumber==3){ //KEEP THE LIGHTS OFF
+        screennumber=17;
+        print(screennumber, "17");
+
     }
+   else if (key === '2' && screennumber==17){ //DOG-POKE
+        screennumber=18;
+        print(screennumber), "18";
+
+    }
+    else if (key === '2' && screennumber==2){ //GO UPSTAIRS
+        screennumber=19;
+        print(screennumber, "19");
+
+    }
+   else if (key === '2' && screennumber==7){ //THROW SOMETHING
+        screennumber=20;
+        print(screennumber,"20");
+
+    }
+   else if (key === '2' && screennumber==19){ //APPROACH THE COFFIN
+        screennumber=21;
+        print(screennumber,"21");
+
+    }
+   else if (key === '2' && screennumber==21){ //VAMPIRE - OPEN COFFIN
+        screennumber=22;
+        print(screennumber,"22");
+
+    }
+     else if (key === '2' && screennumber==1){ //RUN AWAY FROM SOUND
+        screennumber=23;
+        print(screennumber,"23");
+
+    }
+    else if (key === '2' && screennumber==11){ //GRAVESTONE - HIT HAND
+        screennumber=24;
+        print(screennumber,"24");
+
+    } 
+    else if (key === '2' && screennumber==23){ //HIDE IN CLOSET
+        screennumber=25;
+        print(screennumber,"25");
+
+    }
+    else if (key === '2' && screennumber==12){ //DONT MOVE IN CLOSET AGAIN
+        screennumber=26;
+        print(screennumber,"26");
+
+    }
+    else if (key === '2' && screennumber==25){ //DONT MOVE AT ALL IN CLOSET 
+        screennumber=27;
+        print(screennumber,"27");
+
+    }
+    else if (key === '2' && screennumber==27){ //USE PHONE TO CALL FOR HELP
+        screennumber=28;
+        print(screennumber,"28");
+
+    }
+    else if (key === '2' && screennumber==15){ //DOOR IS STUCK
+        screennumber=28;
+        print(screennumber, "28");
+
+    } 
    } 

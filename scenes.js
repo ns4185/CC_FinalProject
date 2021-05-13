@@ -1,7 +1,5 @@
 function homescreen(){
     image(home, 0, 0);
-    onhomescreen=true;
-
     fill(255);
     textFont(horror);
     textSize(100);
@@ -23,7 +21,8 @@ function homescreen(){
 
 function lobbyscene(){ //entered the house
     image(lobby, 0, 0);
-    onlobbyscene = true;
+    // onlobbyscene = true;
+    fill(255);
 
     textFont(montserrat);
     textSize(20);
@@ -36,7 +35,8 @@ function lobbyscene(){ //entered the house
 
 function stairwell(){ //decide to follow the noise
     image(upOrDownstairs,0,0);
-    onstairscene=true;
+    // onstairscene=true;
+    fill(255);
 
     textFont(montserrat);
     textSize(20);
@@ -49,8 +49,9 @@ function stairwell(){ //decide to follow the noise
 
 function basementscene1(){ //lights are off
     background(0);
-    onbasementscene1 = true;
+    // onbasementscene1 = true;
 
+    fill(255);
     textFont(montserrat);
     textSize(20);
     text('TURN ON THE LIGHTS [1]',80,350);
@@ -62,7 +63,8 @@ function basementscene1(){ //lights are off
 
 function basementscene2(){ //decide to turn on the lights
     image(basement,0,0);
-    onbasementscene2=true;
+    // onbasementscene2=true;
+    fill(255);
 
     textFont(montserrat);
     textSize(20);
@@ -90,12 +92,9 @@ function basementscene4(){ //decide to scream - ENDING 2 (EXTERMINATOR)
 }
 
 function basementscene5(){//decide to leave the lights off
-    background(50); //PLACEHOLDER
-    onbasementscene5=true;
-    textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[INSERT RED EYES HERE]',400,350);
+    image(redeyes,0,0);
+    // onbasementscene5=true;
+    fill(255);
 
     textFont(montserrat);
     textSize(20);
@@ -125,7 +124,8 @@ function basementscene7(){ //decide to poke - ENDING 4 (PET THE DOG)
 
 function upstairsscene(){//decide to go upstairs
     image(upstairsHallway,0,0);
-    onupstairsscene=true;
+    // onupstairsscene=true;
+    fill(255);
 
     textFont(montserrat);
     textSize(20);
@@ -138,7 +138,8 @@ function upstairsscene(){//decide to go upstairs
 
 function roomscene(){//decide to enter the room
     image(bedroom,0,0);
-    onroomscene=true;
+    // onroomscene=true;
+    fill(255);
 
     textFont(montserrat);
     textSize(20);
@@ -168,13 +169,10 @@ function thrown(){//decide to throw something - ENDING 6 (HIT THE GHOST)
 }
 
 function coffinscene1(){//decide to approach the coffin
-    background(50); //PLACEHOLDER
-    oncoffinscene1=true;
-    textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[INSERT CLOSE-UP OF COFFIN]',300,350);
-
+    image(coffinclose,0,0);
+    // oncoffinscene1=true;
+    
+    fill(255);
     textFont(montserrat);
     textSize(20);
     text('DO NOTHING [1]',80,350);
@@ -205,7 +203,8 @@ function coffinscene3(){//decide to open the coffin - ENDING 7 (TOMATO JUICE)
 
 function closetwindowscene(){//decide to run away from noise
     image(closetWindow,0,0);
-    onclosetwindowscene = true;
+    // onclosetwindowscene = true;
+    fill(255);
 
     textFont(montserrat);
     textSize(20);
@@ -219,7 +218,8 @@ function closetwindowscene(){//decide to run away from noise
 
 function gravestonescene(){//decide to use the window
     image(gravestone,0,0);
-    ongravestonescene = true;
+    // ongravestonescene = true;
+    fill(255);
 
     textFont(montserrat);
     textSize(20);
@@ -250,13 +250,11 @@ function whack(){ //decide to smack the hand - ENDING 9 (WHACK-A-HAND)
 }
 
 function inthecloset(){//decide to hide in the closet
-    background(50); //PLACEHOLDER
-    onclosetscene1=true;
-    textFont(montserrat);
-    textSize(40);
-    fill(0);
-    text('[INSERT HIDING IN CLOSET]',300,350);
-
+    image(closetback,0,0);
+    image(closetdoor,0,0);
+    // onclosetscene1=true;
+   
+    fill(255);
     textFont(montserrat);
     textSize(20);
     text('MOVE [1]',80,350);
@@ -268,11 +266,13 @@ function inthecloset(){//decide to hide in the closet
 }
 
 function dangercloset(){ //moved in the closet
-    background(50); //PLACEHOLDER
-    ondangerclosetscene=true;
+    image(closetback,0,0);
+    image(closetdoor,0,0);
+    // ondangerclosetscene=true;
+
     textFont(montserrat);
     textSize(40);
-    fill(0);
+    fill(255);
     text('[INSERT FIGURE MOVING CLOSER]',250,350);
 
     textFont(montserrat);
@@ -302,11 +302,12 @@ function dontmove(){//decide to do nothing again - ENDING 11 (NOT A GHOST)
 
 
 function stuckincloset(){//didn't move in the closet
-    background(50); //PLACEHOLDER
-    onstuckinclosetscene=true;
+    image(closetback,0,0);
+    image(closetdoor,0,0);
+    // onstuckinclosetscene=true;
     textFont(montserrat);
     textSize(40);
-    fill(0);
+    fill(255);
     text('[STUCK IN CLOSET]',400,350);
 
     textFont(montserrat);
@@ -320,11 +321,12 @@ function stuckincloset(){//didn't move in the closet
 }
 
 function shakingdoor(){//decided to shake the door
-    background(50); //PLACEHOLDER
-    onshakingdoorscene=true;
+    image(closetback,0,0);
+    image(closetdoor,0,0);
+    // onshakingdoorscene=true;
     textFont(montserrat);
     textSize(40);
-    fill(0);
+    fill(255);
     text('[STUCK IN CLOSET STILL]',600,350);
 
     textFont(montserrat);
